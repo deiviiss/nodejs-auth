@@ -11,6 +11,7 @@
     "api",
     "frontend"
   ],
+  "pnpm": true,
   "devDependencies": {
     "prettier": "2.7.1"
   }

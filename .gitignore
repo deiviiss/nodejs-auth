@@ -7,6 +7,9 @@
 
 # dependencies
 node_modules
+pnpm-lock.yaml
+/mongo_data/
+/pnpm-lock.yaml
 
 # Environment files
 .env
