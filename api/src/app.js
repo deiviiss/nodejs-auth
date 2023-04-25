@@ -3,6 +3,8 @@ import cors from 'cors';
 import { signUp } from './routes/sign-up.js';
 import { login } from './routes/login.js';
 import { profile } from './routes/profile/index.js';
+//auth LocalStrategy
+import passport from './utils/auth/index.js';
 
 export const app = express();
 
@@ -10,9 +12,10 @@ export const app = express();
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+// Inicializa Passport y lo usa como middleware
+app.use(passport.initialize());
 
 // API
-// @todo: Almancenar el password de forma segura
 app.use('/api/v1/sign-up', signUp);
 // @todo: generar un token jwt seguro para la sesión del usuario
 app.use('/api/v1/login', login);

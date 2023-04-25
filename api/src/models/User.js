@@ -13,6 +13,12 @@ export const UserSchema = new Mongoose.Schema(
       minlength: 6,
       required: true,
     },
+    profileId: {
+      type: Mongoose.Schema.Types.ObjectId,
+      ref: 'Profile',
+      unique: true,
+      sparse: true,
+    },
   },
   { timestamps: true }
 );
